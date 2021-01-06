@@ -4,7 +4,7 @@
 /**
   * QT Encoder Dial
   *
-  * Base in http://thecodeinn.blogspot.com/2015/02/customizing-qdials-in-qt-part-1.html
+  * Based in http://thecodeinn.blogspot.com/2015/02/customizing-qdials-in-qt-part-1.html
   * by Peter Goldsborough
   */
 

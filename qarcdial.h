@@ -1,6 +1,13 @@
 #ifndef QARCDIAL_H
 #define QARCDIAL_H
 
+/**
+  * QT Encoder Dial
+  *
+  * Based in http://thecodeinn.blogspot.com/2015/03/customizing-qdials-in-qt-part-2.html
+  * by Peter Goldsborough
+  */
+
 #include "RBCustomUI_global.h"
 #include <QDial>
 #include <QString>
