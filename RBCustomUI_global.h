@@ -1,0 +1,12 @@
+#ifndef RBCUSTOMUI_GLOBAL_H
+#define RBCUSTOMUI_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(RBCUSTOMUI_LIBRARY)
+#  define RBCUSTOMUI_EXPORT Q_DECL_EXPORT
+#else
+#  define RBCUSTOMUI_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // RBCUSTOMUI_GLOBAL_H
