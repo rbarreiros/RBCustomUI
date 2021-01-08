@@ -3,6 +3,7 @@
 #include <QPainter>
 #include <QColor>
 #include <cmath>
+#include <QDebug>
 
 using namespace RBCustomUI;
 

@@ -31,10 +31,10 @@ QArcDial::QArcDial(const QString& text,
     connect(this, &QDial::valueChanged,
             this, &QArcDial::updateValue);
 
-    setMinimumSize(100,100);
+    //setMinimumSize(50,50);
     setMaximumAngle(-360);
     setStartAngle(270);
-    updateValue(QDial::value());
+    updateValue();
 }
 
 QArcDial::~QArcDial() = default;
@@ -56,6 +56,7 @@ void QArcDial::paintEvent(QPaintEvent*)
 
     painter.setPen(QPen(Qt::NoPen));                // No border
     painter.drawEllipse(QDial::rect());             // Draw background circle
+    //painter.drawEllipse(0, 0, QDial::width(), QDial::width());
     painter.setPen(textPen);
     painter.drawText(*m_textRect, Qt::AlignHCenter | Qt::AlignBottom, m_text);
     painter.drawText(*m_valueRect, Qt::AlignCenter, m_valueString);
@@ -65,7 +66,7 @@ void QArcDial::paintEvent(QPaintEvent*)
 
 void QArcDial::resizeEvent(QResizeEvent* event)
 {
-    QDial::setMinimumSize(event->size());
+    //QDial::setMinimumSize(event->size());
     double width = QDial::width() - (2 * m_arcWidth);
     double height = width / 2;
     *m_textRect = QRectF(m_arcWidth, m_arcWidth, width, height);
@@ -76,9 +77,9 @@ void QArcDial::resizeEvent(QResizeEvent* event)
                        QDial::height() - m_arcWidth);
 }
 
-void QArcDial::updateValue(int value)
+void QArcDial::updateValue()
 {
-    //double value = QDial::value();
+    double value = QDial::value();
 
     // Get ratio between current value and maximum to calculate angle
     double ratio = value / QDial::maximum();
@@ -92,7 +93,7 @@ void QArcDial::setArcWidth(double px)
     *m_arcRect = QRectF(m_arcWidth / 2,
                         m_arcWidth / 2,
                         QDial::width() - m_arcWidth,
-                        QDial::height() - m_arcWidth);
+                        QDial::width() - m_arcWidth);
 
     m_arcPen->setWidth(m_arcWidth);
 }

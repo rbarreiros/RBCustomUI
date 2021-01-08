@@ -30,8 +30,10 @@ public:
     void setKnobMargin(double knobMargin);
     double getKnobMargin() const;
 
-private:
+protected:
     virtual void paintEvent(QPaintEvent *) override;
+
+private:
     double m_knobRadius;
     double m_knobMargin;
 

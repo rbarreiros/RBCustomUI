@@ -46,7 +46,7 @@ public:
     QString getText() const;
 
 private slots:
-    void updateValue(int value);
+    void updateValue();
 
 private:
     virtual void paintEvent(QPaintEvent*) override;
